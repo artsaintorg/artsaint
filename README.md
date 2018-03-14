@@ -8,8 +8,8 @@
 ## Installation
 
 ```bash
-git clone https://github.com/damaera/react-redux-styled.git
-cd react-redux-styled
+git clone https://github.com/damaera/react-redux-styled-starter.git
+cd react-redux-styled-starter
 yarn
 ```
 
