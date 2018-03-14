@@ -2,12 +2,13 @@ import React from 'react'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import {
   increment,
   incrementAsync,
   decrement,
   decrementAsync
-} from '../../storeslines/counter'
+} from '../stores/counter'
 
 const Home = props => (
   <div>
@@ -39,6 +40,17 @@ const Home = props => (
     </p>
   </div>
 )
+
+Home.propTypes = {
+  count: PropTypes.number,
+  isDecrementing: PropTypes.bool,
+  isIncrementing: PropTypes.bool,
+  increment: PropTypes.func,
+  decrement: PropTypes.func,
+  incrementAsync: PropTypes.func,
+  decrementAsync: PropTypes.func,
+  changePage: PropTypes.func
+}
 
 const mapStateToProps = state => ({
   count: state.counter.count,
