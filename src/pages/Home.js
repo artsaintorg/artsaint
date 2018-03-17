@@ -10,8 +10,11 @@ import {
   decrementAsync
 } from '../stores/counter'
 
+import Landing from '../sections/Landing'
+
 const Home = props => (
   <div>
+    <Landing />
     <h1>Home</h1>
     <p>Count: {props.count}</p>
 

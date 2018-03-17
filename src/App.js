@@ -1,14 +1,13 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 
+import Header from './header/Header'
+
 const App = () => (
   <div>
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
-    </header>
+    <Header />
 
     <main>
       <Route exact path="/" component={Home} />

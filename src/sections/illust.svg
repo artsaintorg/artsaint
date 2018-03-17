@@ -1,0 +1,50 @@
+<svg width="472" height="450" viewBox="0 0 472 450" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Frame 2</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="matrix(2 0 0 2 2728 1440)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -1364 -720L -1128 -720L -1128 -495L -1364 -495L -1364 -720Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="Frame 2" clip-path="url(#clip-0)">
+<path d="M -1364 -720L -1128 -720L -1128 -495L -1364 -495L -1364 -720Z" fill="#FFFFFF"/>
+<g id="Ellipse">
+<use xlink:href="#path0_fill" transform="matrix(0.973217 0.229887 -0.229887 0.973217 -1294.19 -700.029)" fill="#EBECF0"/>
+</g>
+<g id="Vector 2">
+<use xlink:href="#path1_fill" transform="matrix(-0.973217 -0.229887 0.229887 -0.973217 -1194.91 -570.275)" fill="url(#paint1_linear)"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_fill" transform="matrix(0.973217 0.229887 -0.229887 0.973217 -1249.64 -712.671)" fill="url(#paint2_linear)"/>
+</g>
+<g id="Vector 2">
+<use xlink:href="#path3_fill" transform="matrix(0.0298336 0.999555 -0.999555 0.0298336 -1194.38 -696.536)" fill="url(#paint3_linear)"/>
+</g>
+<g id="Vector 3">
+<use xlink:href="#path4_fill" transform="matrix(0.973217 0.229887 -0.229887 0.973217 -1305.32 -685.75)" fill="url(#paint4_linear)"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint1_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(6.16e-15 130.881 -100.6 8.01417e-15 106.606 6.93146)">
+<stop offset="0" stop-color="#FFAB00"/>
+<stop offset="1" stop-color="#FFC142"/>
+</linearGradient>
+<linearGradient id="paint2_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(9.00115e-15 161 -147 9.85841e-15 147 -9.85841e-15)">
+<stop offset="0" stop-color="#0065FF"/>
+<stop offset="1" stop-color="#73A8FA"/>
+</linearGradient>
+<linearGradient id="paint3_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.16841e-14 152.688 -190.816 9.34945e-15 190.816 -9.34945e-15)">
+<stop offset="0" stop-color="#FA866B"/>
+<stop offset="1" stop-color="#FF481F"/>
+</linearGradient>
+<linearGradient id="paint4_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(8.65766e-15 165.67 -141.39 1.01443e-14 141.39 -13.0001)">
+<stop offset="0" stop-color="#36B37E"/>
+<stop offset="1" stop-color="#54D19C"/>
+</linearGradient>
+<path id="path0_fill" d="M 144.91 72.4548C 144.91 112.47 112.47 144.91 72.4548 144.91C 32.4391 144.91 0 112.47 0 72.4548C 0 32.4391 32.4391 0 72.4548 0C 112.47 0 144.91 32.4391 144.91 72.4548Z"/>
+<path id="path1_fill" d="M 74.8777 33.4906C 73.4716 53.271 94.0964 90.7459 52.8501 94.9418C 47.8505 94.9418 12.686 54.4896 1.78219 74.8497C -10.2621 97.3395 41.4724 128.956 74.8777 108.29C 85.9478 101.442 115.117 84.8426 104.875 74.8497C 52.8501 24.0889 145.839 6.35796 132.716 0.963292C 119.592 -4.43138 76.2838 13.7101 74.8777 33.4906Z"/>
+<path id="path2_fill" d="M 100.973 81.8868C 65.3098 75.7759 120.073 0 80.0205 0C 59.1713 0 35.4813 60.1284 28.9947 18.3328C 22.9594 -20.5549 -8.31438 50.7766 2.11024 81.8868C 12.5348 112.997 46.1066 55.221 60.3718 55.221C 71.784 55.221 68.7847 72.9982 65.8585 81.8868C 61.652 95.5901 55.763 128.774 65.8585 151.885C 78.4777 180.773 143.22 132.996 146.512 119.108C 149.804 105.219 136.636 87.9977 100.973 81.8868Z"/>
+<path id="path3_fill" d="M 28.7298 150.303C 13.4974 159.233 6.14375 141.374 1.41644 125.091C -1.03476 108.283 -2.05025 76.0319 13.4974 81.4946C 32.9319 88.3229 28.7298 48.4034 36.0834 23.1911C 43.437 -2.02125 70.2251 -5.69805 109.094 7.43338C 147.963 20.5648 124.852 47.8782 128.003 65.2116C 131.155 82.5451 151.115 70.9895 179.479 74.6663C 207.842 78.3431 174.751 112.485 168.973 114.061C 163.196 115.636 125.377 119.838 109.094 103.555C 92.8112 87.2724 102.266 32.1204 77.5787 31.5952C 52.8916 31.0699 62.8715 84.6461 28.7298 103.555C -5.4119 122.465 43.9623 141.374 28.7298 150.303Z"/>
+<path id="path4_fill" d="M 80.5 55.9998C 99 68.4998 134.943 48.1846 124 22.4999C 113.057 -3.18485 135.4 -5.20015 141 7.99985C 148 24.4999 143.5 34.9998 124 55.9998C 116.515 64.0606 98.5 77.9999 70.5 69.4999C 42.5 60.9999 34.7185 104.141 36.2185 116.141C 37.7185 128.141 30.7185 153.641 17.2185 152.641C 3.71855 151.641 -11.2293 116.159 12.4946 90.6591C 36.2185 65.1591 62 43.4998 80.5 55.9998Z"/>
+</defs>
+</svg>
