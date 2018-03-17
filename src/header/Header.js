@@ -10,10 +10,16 @@ import logo from './artsaint-logo.png'
 const Wrapper = styled.div`
   height: 60px;
   display: flex;
-  /* background: #fff; */
-  /* border-bottom: solid 1px #EBECF0; */
   align-items: center;
   padding: 0 20px;
+  position: fixed;
+  width: 100vw;
+  z-index: 9;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 `
 
 const Logo = styled.img`

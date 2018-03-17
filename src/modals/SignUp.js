@@ -42,7 +42,7 @@ class SignUp extends Component {
 
   onCloseModal(e) {
     if (e.target.id === 'js-overlay') {
-      console.log(1)
+      // console.log(1)
       this.props.hideModal()
     }
   }

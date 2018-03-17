@@ -9,21 +9,21 @@ const Button = styled.button`
   border: none;
   margin-right: 5px;
 
-  transition: all 0.1s;
-
   ${({ size }) => {
     if (size === 'big') {
       return `
-        font-size: 16px;
-        padding: 12px 20px;
+      font-size: 16px;
+      padding: 12px 20px;
       `
     } else {
       return `
-        font-size: 14px;
-        padding: 8px 10px;
+      font-size: 14px;
+      padding: 8px 10px;
       `
     }
-  }} ${({ color }) => {
+  }} transition: all 0.1s;
+
+  ${({ color }) => {
     if (color === 'blue') {
       return `
         background: linear-gradient(to right, #0065FF, #2684FF);
