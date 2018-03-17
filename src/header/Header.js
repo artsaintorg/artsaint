@@ -42,7 +42,7 @@ class Header extends React.Component {
           <Link to="/new">
             <Button>New</Button>
           </Link>
-          <Link to="/new">
+          <Link to="/hot">
             <Button>Hot</Button>
           </Link>
           <Link to="/promoted">
