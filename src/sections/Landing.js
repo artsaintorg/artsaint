@@ -10,7 +10,6 @@ import Container from '../components/Container'
 import Button from '../components/Button'
 
 import { showSignUpModal } from '../stores/modal'
-import SignUp from '../modals/SignUp'
 
 const illust = require('./hero.png')
 const bg = require('./illust.svg')
@@ -117,7 +116,6 @@ class Landing extends React.Component {
             />
           </div>
         </Wrapper>
-        <SignUp />
         {/* <Triangle />
         <HowTo>
           <Wrapper>

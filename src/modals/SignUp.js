@@ -7,11 +7,13 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
+import Button from '../components/Button'
 import { hideModal } from '../stores/modal'
 
 const Overlay = styled.div`
-  background: #222;
+  background: rgba(240, 241, 245, 0.9);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -21,13 +23,25 @@ const Overlay = styled.div`
 const Content = styled.div`
   background: #fff;
   width: 400px;
-  height: 400px;
+  padding: 20px;
+  box-shadow: 0 10px 30px #ebecf0;
+  border-radius: 2px;
 `
 
 const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 19;
+`
+
+const Title = styled.h3`
+  margin: 0 auto;
+`
+
+const Par = styled.p``
+const Footer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
 `
 
 class SignUp extends Component {
@@ -51,7 +65,21 @@ class SignUp extends Component {
     return (
       <ModalWrapper>
         <Overlay id="js-overlay" onClick={this.onCloseModal}>
-          <Content>content</Content>
+          <Content>
+            <Title>Create a Steem account</Title>
+            <Par>
+              In order to use Artsaint you need a Steem account. You will be
+              redirected to the sign-up process of steemit.com. Once your Steem
+              account has been verified and enabled, you can use it to log in to
+              Artsaint.
+            </Par>
+            <Footer>
+              <Link to="https://signup.steemit.com" target="_blank">
+                <Button color="blue">Proceed</Button>
+              </Link>
+              <Button onClick={this.props.hideModal}>Cancel</Button>
+            </Footer>
+          </Content>
         </Overlay>
       </ModalWrapper>
     )

@@ -1,4 +1,4 @@
-/* @import url('https://rsms.me/inter/inter-ui.css'); */
+@import url('https://rsms.me/inter/inter-ui.css');
 
 body {
   margin: 0;
@@ -8,9 +8,16 @@ body {
 * {
   font-family: 'Inter UI', sans-serif;
   color: #091e42;
+
+  transition: all 0.1s ease-in-out;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+p {
+  opacity: 0.7;
+  line-height: 1.6;
 }

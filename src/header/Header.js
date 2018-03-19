@@ -1,11 +1,15 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
 import { Link } from 'react-router-dom'
 
 import Button from '../components/Button'
 
 import logo from './artsaint-logo.png'
+import { showSignUpModal } from '../stores/modal'
 
 const Wrapper = styled.div`
   height: 60px;
@@ -17,8 +21,17 @@ const Wrapper = styled.div`
   z-index: 9;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.99) 10%,
+    rgba(255, 255, 255, 0.96) 20%,
+    rgba(255, 255, 255, 0.91) 30%,
+    rgba(255, 255, 255, 0.84) 40%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.64) 60%,
+    rgba(255, 255, 255, 0.51) 70%,
+    rgba(255, 255, 255, 0.36) 80%,
+    rgba(255, 255, 255, 0.19) 90%,
+    rgba(255, 255, 255, 0) 100%
   );
 `
 
@@ -57,10 +70,23 @@ class Header extends React.Component {
         </NavWrapper>
         <Right>
           <Button>Login</Button>
-          <Button color="blue">Sign up</Button>
+          <Button color="blue" onClick={this.props.showSignUpModal}>
+            Sign up
+          </Button>
         </Right>
       </Wrapper>
     )
   }
 }
-export default Header
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      showSignUpModal
+    },
+    dispatch
+  )
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
