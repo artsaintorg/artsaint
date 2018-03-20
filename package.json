@@ -12,14 +12,17 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
-    "prettier": "^1.11.0",
+    "prettier": "^1.11.1",
     "react-scripts": "^1.0.17",
     "storybook-router": "^0.3.3"
   },
   "dependencies": {
+    "js-cookie": "^2.2.0",
+    "query-string": "^6.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -30,6 +33,8 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sanitize.css": "^5.0.0",
+    "sc2-sdk": "^1.0.2",
+    "steemconnect": "^0.0.35",
     "styled-components": "^3.2.2",
     "styled-transition-group": "^1.0.0"
   },

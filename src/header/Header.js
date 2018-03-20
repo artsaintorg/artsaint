@@ -1,8 +1,9 @@
 import * as React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import Cookies from 'js-cookie'
 
 import { Link } from 'react-router-dom'
 
@@ -10,6 +11,7 @@ import Button from '../components/Button'
 
 import logo from './artsaint-logo.png'
 import { showSignUpModal } from '../stores/modal'
+import { getLoginURL, getMe, doLogout } from '../stores/auth'
 
 const Wrapper = styled.div`
   height: 60px;
@@ -48,6 +50,36 @@ const NavWrapper = styled.nav`
 const Right = styled.div``
 
 class Header extends React.Component {
+  static propTypes = {
+    getLoginURL: PropTypes.func,
+    showSignUpModal: PropTypes.func,
+    loginURL: PropTypes.string,
+    getMe: PropTypes.func
+  }
+
+  componentDidMount() {
+    this.props.getLoginURL()
+    if (Cookies.get('accessToken')) {
+      this.props.getMe()
+    }
+  }
+
+  renderNotLogin = () => (
+    <Right>
+      <a href={this.props.loginURL}>
+        <Button>Login</Button>
+      </a>
+      <Button color="blue" onClick={this.props.showSignUpModal}>
+        Sign up
+      </Button>
+    </Right>
+  )
+  renderLogin = () => (
+    <Right>
+      <Button onClick={this.props.doLogout}>Logout</Button>
+    </Right>
+  )
+
   render() {
     return (
       <Wrapper>
@@ -68,23 +100,25 @@ class Header extends React.Component {
             <Button>Promoted</Button>
           </Link>
         </NavWrapper>
-        <Right>
-          <Button>Login</Button>
-          <Button color="blue" onClick={this.props.showSignUpModal}>
-            Sign up
-          </Button>
-        </Right>
+        {this.props.isLogin ? this.renderLogin() : this.renderNotLogin()}
       </Wrapper>
     )
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+  loginURL: state.auth.loginURL,
+  isLogin: state.auth.isLogin,
+  me: state.auth.me
+})
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      showSignUpModal
+      showSignUpModal,
+      getLoginURL,
+      getMe,
+      doLogout
     },
     dispatch
   )

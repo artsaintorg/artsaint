@@ -14,11 +14,12 @@ module.exports = {
     },
     sourceType: 'module'
   },
-  plugins: ['react'],
+  plugins: ['react', 'prettier'],
   rules: {
     indent: ['error', 2, { SwitchCase: 1 }],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    semi: ['error', 'never']
+    semi: ['error', 'never'],
+    'prettier/prettier': 'error'
   }
 }
