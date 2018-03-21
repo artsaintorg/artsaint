@@ -53,12 +53,13 @@ const User = styled.div``
 
 class ImageCard extends Component {
   render() {
+    const { title, cover } = this.props.data
     return (
       <Wrapper>
-        <Cover src="https://picsum.photos/240/320/?random" />
+        <Cover src={cover} />
         <Content className="content">
           <User />
-          <Title>This is Title</Title>
+          <Title>{title}</Title>
         </Content>
       </Wrapper>
     )
