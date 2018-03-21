@@ -4,6 +4,9 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
+import ReactPlaceholder from 'react-placeholder'
+import 'react-placeholder/lib/reactPlaceholder.css'
+
 import { getFeed, DEFAULT_TAG } from '../stores/feed'
 
 import Card from '../components/Card'
@@ -14,6 +17,11 @@ const Wrapper = styled.div`
   justify-content: space-between;
   width: 1000px;
   margin: 20px auto;
+`
+const WrapperLoading = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 `
 class Feed extends Component {
   static propTypes = {
@@ -69,6 +77,32 @@ class Feed extends Component {
     }
   }
 
+  renderCardLoading = () => (
+    <WrapperLoading>
+      <ReactPlaceholder
+        showLoadingAnimation={true}
+        type="rect"
+        ready={false}
+        style={{ width: 320, height: 240, marginRight: 20 }}>
+        <div />
+      </ReactPlaceholder>
+      <ReactPlaceholder
+        showLoadingAnimation={true}
+        type="rect"
+        ready={false}
+        style={{ width: 320, height: 240, marginRight: 20 }}>
+        <div />
+      </ReactPlaceholder>
+      <ReactPlaceholder
+        showLoadingAnimation={true}
+        type="rect"
+        ready={false}
+        style={{ width: 320, height: 240, margin: 0 }}>
+        <div />
+      </ReactPlaceholder>
+    </WrapperLoading>
+  )
+
   render() {
     const loading = this.props.selectLoading('trending')
     const list = this.props.selectList('trending')
@@ -78,7 +112,7 @@ class Feed extends Component {
           return <Card data={item} key={item.id} />
         })}
 
-        {loading && <div>loading</div>}
+        {loading && this.renderCardLoading()}
       </Wrapper>
     )
   }

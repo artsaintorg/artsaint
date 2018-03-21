@@ -54,17 +54,46 @@ const Title = styled.h4`
   line-height: 20px;
   overflow: hidden;
 `
-
-const Footer = styled.div``
-
-const User = styled.div``
+const Footer = styled.div`
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+`
+const User = styled.div`
+  color: #fff;
+  font-weight: bold;
+  flex: 1;
+`
+const Ava = styled.img`
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-right: 10px;
+`
+const Votes = styled.div`
+  color: #fff;
+`
+const Payout = styled.div`
+  color: #fff;
+  margin-left: 10px;
+`
 
 class Card extends Component {
   static propTypes = {
     data: PropTypes.object
   }
   render() {
-    const { title, cover, author, permlink } = this.props.data
+    const {
+      title,
+      cover,
+      author,
+      permlink,
+      votes,
+      pendingPayout
+    } = this.props.data
     return (
       <Link to={`/@${author}/${permlink}`}>
         <Wrapper>
@@ -73,8 +102,12 @@ class Card extends Component {
           )}
           <Content className="content">
             <Footer>
-              <User />
-              12 likes
+              <User>
+                <Ava src={`https://steemitimages.com/u/${author}/avatar`} />
+                {author}
+              </User>
+              <Votes>▲{votes}</Votes>
+              <Payout>${pendingPayout}</Payout>
             </Footer>
             <Title>{title}</Title>
           </Content>
