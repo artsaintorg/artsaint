@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getFeed, DEFAULT_TAG } from '../stores/feed'
 
-import ImageCard from '../components/ImageCard'
+import Card from '../components/Card'
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,8 +13,9 @@ const Wrapper = styled.div`
   width: 1000px;
   margin: 20px auto;
 `
-class Gallery extends Component {
+class Feed extends Component {
   componentDidMount() {
+    console.log(this.props.router)
     this.props.getFeed('trending')
   }
 
@@ -27,7 +28,7 @@ class Gallery extends Component {
     return (
       <Wrapper>
         {list.map(item => {
-          return <ImageCard data={item} key={item.id} />
+          return <Card data={item} key={item.id} />
         })}
       </Wrapper>
     )
@@ -35,6 +36,7 @@ class Gallery extends Component {
 }
 
 const mapStateToProps = state => ({
+  router: state.router,
   getLoading(sortBy, tag = DEFAULT_TAG) {
     let loading = null
     if (state.feed[sortBy] && state.feed[sortBy][tag]) {
@@ -59,4 +61,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(mapStateToProps, mapDispatchToProps)(Gallery)
+export default connect(mapStateToProps, mapDispatchToProps)(Feed)

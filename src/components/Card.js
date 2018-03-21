@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const Wrapper = styled.div`
   width: 320px;
@@ -47,23 +49,37 @@ const Content = styled.div`
 const Title = styled.h4`
   color: #fff;
   margin: 0;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
 `
+
+const Footer = styled.div``
 
 const User = styled.div``
 
-class ImageCard extends Component {
+class Card extends Component {
+  static propTypes = {
+    data: PropTypes.object
+  }
   render() {
-    const { title, cover } = this.props.data
+    const { title, cover, author, permlink } = this.props.data
     return (
-      <Wrapper>
-        <Cover src={cover} />
-        <Content className="content">
-          <User />
-          <Title>{title}</Title>
-        </Content>
-      </Wrapper>
+      <Link to={`/@${author}/${permlink}`}>
+        <Wrapper>
+          {cover && <Cover src={cover} />}
+          <Content className="content">
+            <Footer>
+              <User />
+              12 likes
+            </Footer>
+            <Title>{title}</Title>
+          </Content>
+        </Wrapper>
+      </Link>
     )
   }
 }
 
-export default ImageCard
+export default Card

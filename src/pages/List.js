@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Gallery from '../sections/Gallery'
+import Feed from '../sections/Feed'
 
 const List = () => (
   <div>
-    <Gallery />
+    <Feed />
   </div>
 )
 
