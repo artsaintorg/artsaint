@@ -15,8 +15,29 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 1000px;
+  width: 320px;
   margin: 20px auto;
+
+  .min-tablet,
+  .min-desktop {
+    display: none;
+  }
+  @media (min-width: 660px) {
+    & {
+      width: 660px;
+    }
+    .min-tablet {
+      display: block;
+    }
+  }
+  @media (min-width: 1000px) {
+    & {
+      width: 1000px;
+    }
+    .min-desktop {
+      display: block;
+    }
+  }
 `
 const WrapperLoading = styled.div`
   display: flex;
@@ -83,6 +104,7 @@ class Feed extends Component {
         showLoadingAnimation={true}
         type="rect"
         ready={false}
+        className="min-tablet"
         style={{ width: 320, height: 240, marginRight: 20 }}>
         <div />
       </ReactPlaceholder>
@@ -90,6 +112,7 @@ class Feed extends Component {
         showLoadingAnimation={true}
         type="rect"
         ready={false}
+        className="min-desktop"
         style={{ width: 320, height: 240, marginRight: 20 }}>
         <div />
       </ReactPlaceholder>
