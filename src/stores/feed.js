@@ -38,7 +38,10 @@ export default (state = initialState, { type, payload }) => {
           [payload.tag]: {
             ...state[payload.sortBy][payload.tag],
             loading: false,
-            list: [...state[payload.sortBy][payload.tag], ...payload.ids]
+            list: [
+              ...(state[payload.sortBy][payload.tag].list || []),
+              ...payload.ids
+            ]
           }
         }
       }
@@ -71,8 +74,20 @@ export default (state = initialState, { type, payload }) => {
 export const getFeed = (
   sortBy = 'trending',
   tag = DEFAULT_TAG,
-  lastPost
-) => dispatch => {
+  lastFeed = null
+) => (dispatch) => {
+  let startAuthor = ''
+  let startPermlink = ''
+  if (lastFeed) {
+    startAuthor = lastFeed.split('/')[0]
+    startPermlink = lastFeed.split('/')[1]
+  }
+
+  const params = {}
+  if (startAuthor && startPermlink) {
+    params.start_author = startAuthor
+    params.start_permlink = startPermlink
+  }
   dispatch({
     type: GET_FEED,
     payload: {
@@ -80,7 +95,7 @@ export const getFeed = (
       tag
     }
   })
-  api(`/feed/${sortBy}`, {}, (err, result) => {
+  api(`/feed/${sortBy}`, params, (err, result) => {
     if (err) {
       dispatch({
         type: GET_FEED_ERROR,
@@ -93,7 +108,7 @@ export const getFeed = (
       const ids = []
       const postEntities = {}
       // convert array to object
-      result.map(item => {
+      result.map((item) => {
         ids.push(item.id)
         postEntities[item.id] = item
       })

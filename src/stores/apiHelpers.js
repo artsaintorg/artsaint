@@ -4,11 +4,11 @@ const API_URL = 'http://localhost:4000'
 
 const api = (url, params, callback) => {
   return axios
-    .get(API_URL + url)
-    .then(res => {
+    .get(API_URL + url, { params })
+    .then((res) => {
       callback(null, res.data)
     })
-    .catch(err => {
+    .catch((err) => {
       callback(err, null)
     })
 }

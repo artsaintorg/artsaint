@@ -68,7 +68,9 @@ class Card extends Component {
     return (
       <Link to={`/@${author}/${permlink}`}>
         <Wrapper>
-          {cover && <Cover src={cover} />}
+          {cover && (
+            <Cover src={`https://steemitimages.com/320x240/${cover}`} />
+          )}
           <Content className="content">
             <Footer>
               <User />
